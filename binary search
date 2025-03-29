@@ -1,1 +1,20 @@
+let arr = [1,2,3,4,5,6,7,8,9];
 
+let index = binarySearch(arr,5);
+
+if(index==-1) console.log("arr not found");
+else console.log(`element found ${index}`);
+
+
+
+function binarySearch(arr,target){
+    let s = 0; e = arr.length-1;
+    while(s<=e){
+        let mid = Math.floor((s+e)/2);
+        if(arr[mid]== target) return mid;
+        else if (arr[mid]>target) e = mid -1;
+        else s = mid + 1;
+    }
+    return -1;
+
+}
